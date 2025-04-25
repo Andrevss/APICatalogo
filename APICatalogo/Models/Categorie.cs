@@ -14,4 +14,3 @@ namespace APICatalogo.Models
 
         public ICollection<Product>? Products { get; set; }
     }
-}
