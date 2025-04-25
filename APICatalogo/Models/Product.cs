@@ -9,5 +9,8 @@
         public string? ImageUrl { get; set; }
         public float Stock { get; set; }
         public DateTime DateRegistration { get; set; }
+
+        public int CategorieId { get; set; }
+        public Categorie? Categorie { get; set; }
     }
 }
