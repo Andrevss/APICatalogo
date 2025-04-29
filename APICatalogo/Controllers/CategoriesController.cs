@@ -19,7 +19,15 @@ namespace APICatalogo.Controllers
         [HttpGet("products")]
         public ActionResult<IEnumerable<Categorie>> GetCategoriesProducts()
         {
-            return _context.Categories.Include(p=> p.Products).ToList();
+            try
+            {
+                return _context.Categories.Include(p => p.Products).ToList();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, 
+                    "Erro ao processar sua solicitação");
+            }
 
         }
 
